@@ -75,9 +75,9 @@ endif
 ifeq ($(USE_MKLML), 1)
 	MSHADOW_CFLAGS += -I$(MKLROOT)/include
 	ifneq ($(shell uname),Darwin)
-		MSHADOW_LDFLAGS += -Wl,--as-needed -lmklml_intel -lmklml_gnu
+		MSHADOW_LDFLAGS += -Wl,--as-needed
 	else
-		MSHADOW_LDFLAGS += -lmklml
+		MSHADOW_LDFLAGS +=
 	endif
 	MSHADOW_LDFLAGS += -liomp5 -L$(MKLROOT)/lib/
 endif
